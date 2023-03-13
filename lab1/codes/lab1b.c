@@ -182,7 +182,7 @@ int main(int argc, char **argv)
                     tempx[i] = partx[i];
                 }
             }
-            (tempx, sendcounts[rk], MPI_DOUBLE, rk, MPI_COMM_WORLD);
+            MPI_Bcast(tempx, sendcounts[rk], MPI_DOUBLE, rk, MPI_COMM_WORLD);
 
             for (int i = 0; i < sendcounts[rk]; ++i) {
                 for (int j = 0; j < sendcounts[rk]; ++j) {
